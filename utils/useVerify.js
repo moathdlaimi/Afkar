@@ -70,7 +70,7 @@ import { useState } from "react";
 import axios from "axios";
 
 
-const verifySession = () => {
+const useVerify = () => {
   const [verified, setVerified] = useState({ loading: true });
   const checkForSession = () => {
     if (localStorage.getItem("authorization") === null) {
@@ -96,4 +96,4 @@ const verifySession = () => {
   };
   return [verified, checkForSession];
 };
-export default verifySession;
+export default useVerify;

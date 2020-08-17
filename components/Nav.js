@@ -26,7 +26,7 @@ const logout = () => {
         if(window.location.pathname === '/'){
           router.reload()
         } else {
-          router.push('/')
+          location.assign('/')
         }
   }). catch((err) => {
         console.log(err);
@@ -44,9 +44,10 @@ const logout = () => {
           isLogged ?
           <li><button onClick={logout}>LOG OUT</button></li>
           :
-          <li><Link href="/login"><a>LOGIN</a></Link></li>
+        <> <li><Link href="/login"><a>LOGIN</a></Link></li>
+          <li><Link href="/register"><a>REGISTER</a></Link></li>
+        </>
         }
-        <li><Link href="/register"><a>REGISTER</a></Link></li>
       </ul>
     </nav>
   )
