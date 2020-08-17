@@ -13,7 +13,7 @@ const LoginForm = () => {
     axios.post('/api/login', values)
     .then((res)=> {
       localStorage.setItem('authorization', res.data.authorization)
-      router.push('/')
+      location.assign('/')
     })
     .catch((err) => {
       console.log(err);

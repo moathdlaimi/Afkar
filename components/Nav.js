@@ -1,9 +1,22 @@
 import Link from 'next/link'
 import {useRouter} from 'next/router'
 import axios from 'axios'
+import { useEffect, useState } from 'react'
 
 
 const Nav = () => {
+
+const [ isLogged, setIslogged ] = useState(false)
+
+useEffect(() => {
+  if(localStorage.getItem('authorization') === null){
+    return;
+  } else {
+    setIslogged(true)
+  }
+}, [])
+
+const router = useRouter()
 
 const logout = () => {
   axios.delete('/api/session', { headers:
@@ -21,14 +34,19 @@ const logout = () => {
 
 }
 
-const router = useRouter()
+
+
   return (
     <nav className="flex">
       <ul className="flex justify-around gap-4">
         <li><Link href="/"><a>HOME</a></Link></li>
+        {
+          isLogged ?
+          <li><button onClick={logout}>LOG OUT</button></li>
+          :
+          <li><Link href="/login"><a>LOGIN</a></Link></li>
+        }
         <li><Link href="/register"><a>REGISTER</a></Link></li>
-        <li><Link href="/login"><a>LOGIN</a></Link></li>
-        <li><button onClick={logout}>LOG OUT</button></li>
       </ul>
     </nav>
   )

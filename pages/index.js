@@ -9,8 +9,8 @@ const Index = () => {
     checkForSession()
   }, [])
 
-  if(verified.data){
-    return verified.data
+  if(!verified){
+    return <div> <h1>You need to log in</h1> </div>
   }
 
   return (
