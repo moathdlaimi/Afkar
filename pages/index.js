@@ -25,7 +25,7 @@ useEffect(() => {
 
 
   return (
-    <div>
+    <div className="flex gap-8 p-10">
       {
         posts.length ? posts.map((post, index) => {
           return <div key={index}>
