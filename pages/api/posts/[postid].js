@@ -19,7 +19,7 @@ export default async (req,res) =>
           res.status(400).json({
             success:false})
       }
-      break
+      break;
 
       case "PUT":
         try {
@@ -31,11 +31,13 @@ export default async (req,res) =>
               success:false})
         }
 
+        break;
+
       default:
         res.status(400).json({
           success:false
         })
-        break
+        break;
 
   }
 }
