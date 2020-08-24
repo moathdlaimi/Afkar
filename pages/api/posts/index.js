@@ -5,7 +5,7 @@ import Sessions from '../../../models/session'
 dbConnect()
 
 export default async (req,res) =>
-{
+{ 
   const {method, body, headers: {authorization}} = req
 
   switch (method) {

@@ -6,8 +6,9 @@ dbConnect()
 
 export default async (req,res) =>
 {
-  const { method, body, query:{ postid } } = req
+  const { method, query:{ postid } } = req
 
+  
   switch (method) {
     case "DELETE":
       try {
