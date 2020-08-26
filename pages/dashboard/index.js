@@ -23,7 +23,12 @@ const Dashboard = () => {
     return (
         <div>
             {posts ? posts.map((post,index) => {
-                return <div key={index}> {post.title} <DeleteButton postid={post._id} /></div>
+                return <div key={index}> 
+                    {post.title}   
+                    <br />
+                    <DeleteButton postid={post._id} /> 
+                    <a href={`dashboard/editPost/${post._id}`}> EDIT </a> 
+                 </div>
             }): null } 
         </div>
     );

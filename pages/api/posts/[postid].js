@@ -6,7 +6,7 @@ dbConnect()
 
 export default async (req,res) =>
 {
-  const { method, query:{ postid } } = req
+  const { method, query:{ postid } , body } = req
 
   
   switch (method) {
@@ -32,6 +32,18 @@ export default async (req,res) =>
         }
 
         break;
+
+        case "GET":
+          try {
+              const posts = await
+              Posts.findOne({ _id:postid })
+              res.status(200).json({success:true, data:posts})
+          } catch(err) {
+              res.status(400).json({
+                success:false})
+          }
+  
+          break;
 
       default:
         res.status(400).json({
