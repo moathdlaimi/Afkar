@@ -13,7 +13,7 @@ const RegisterForm = () => {
     axios.post('/api/register', values)
     .then((res)=> {
       localStorage.setItem('authorization', res.data.authorization)
-      router.push('/')
+      location.assign('/')
     })
   }
 

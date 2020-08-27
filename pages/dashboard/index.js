@@ -21,13 +21,15 @@ const Dashboard = () => {
       }, [])
 
     return (
-        <div>
+        <div className="dashboard-main-container">
+          <a className="new-post-btn" href={`dashboard/newPost/`}> + New Post</a>
             {posts ? posts.map((post,index) => {
-                return <div key={index}> 
-                    {post.title}   
-                    <br />
+                return <div key={index} className="dashboard-post-container"> 
+                    <h1 className="text-lg font-bold">{post.title}</h1>   
+                    <div>
                     <DeleteButton postid={post._id} /> 
-                    <a href={`dashboard/editPost/${post._id}`}> EDIT </a> 
+                    <a href={`dashboard/editPost/${post._id}`}> EDIT</a> 
+                    </div>
                  </div>
             }): null } 
         </div>

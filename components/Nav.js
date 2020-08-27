@@ -42,7 +42,10 @@ const logout = () => {
         <li><Link href="/"><a>HOME</a></Link></li>
         {
           isLogged ?
+          <>
+          <li><Link href="/dashboard"><a>DASHBOARD</a></Link></li>
           <li><button onClick={logout}>LOG OUT</button></li>
+          </>
           :
         <> <li><Link href="/login"><a>LOGIN</a></Link></li>
           <li><Link href="/register"><a>REGISTER</a></Link></li>

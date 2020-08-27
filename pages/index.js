@@ -25,14 +25,12 @@ useEffect(() => {
 
 
   return (
-    <div className="flex gap-8 p-10">
+    <div className="main-container">
       {
         posts.length ? posts.map((post, index) => {
-          return <div key={index}>
-                    <h2>{post.title}</h2>
+          return <div key={index} className="post-container">
+                    <h1 className="text-2xl font-bold ">{post.title}</h1>
                     <p>{post.body}</p>
-                    <p>{post._id}</p>
-                    <p>{post.author}</p>
                  </div>
         })
         : null

@@ -1,0 +1,44 @@
+.logo {
+    width:20%;
+}
+
+.main-container {
+    text-align: center;
+}
+
+.post-container{
+    border: 1px solid black;
+    display: grid;
+    gap: 1em;
+    width: 75%;
+    margin: 50px auto;
+    text-align: left;
+    padding: 15px;
+    border-radius:10px;
+    box-shadow: 5px 10px gray;
+}
+
+.dashboard-main-container{
+    margin-top: 10%;
+    display: grid;
+    grid-template-columns: 1fr 100px 100px;
+    grid-template-rows: 25px auto;
+}
+
+.dashboard-post-container {
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    height:50px;
+    width: 80%;
+    margin: 15px auto;
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
+.new-post-btn{
+    grid-column-start: 2;
+    background-color: silver;
+    text-align: center;
+    font-weight: bold;
+}

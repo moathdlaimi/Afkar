@@ -1,6 +1,7 @@
 import App from 'next/app'
 import Head from 'next/head'
 import Header from '../components/Header'
+import '../public/css/main.css'
 
 const  MyApp = ({ Component, pageProps }) => {
   return (
