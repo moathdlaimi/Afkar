@@ -1,4 +1,4 @@
-import NewPostForm from '../../components/forms/NewPostForm'
+import NewPostForm from '../../components/forms/newPostForm'
 import useVerify from '../../utils/useVerify'
 import { useEffect } from 'react'
 
