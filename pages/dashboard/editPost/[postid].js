@@ -9,6 +9,7 @@ const EditPostPage = () => {
 
     return <div> 
         <EditPostForm postid={postid} />
+        
         </div>
 }
 
