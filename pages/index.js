@@ -23,6 +23,16 @@ useEffect(() => {
     })
 },[])
 
+const postSize = (post) => {
+  post = post.split('')
+  let preview = ''
+  for(let i = 0; i < 250; i++){
+    preview += post[i]
+  }
+  return preview
+}
+
+
 
   return (
     <div className="main-container">
@@ -30,7 +40,9 @@ useEffect(() => {
         posts.length ? posts.map((post, index) => {
           return <div key={index} className="post-container">
                     <h1 className="text-2xl font-bold ">{post.title}</h1>
-                    <p>{post.body}</p>
+                    <p>{postSize(post.body)}
+                    <a className="text-blue-600" href={'/post/' + post._id}>Continue Reading..</a>
+                    </p>
                  </div>
         })
         : null
