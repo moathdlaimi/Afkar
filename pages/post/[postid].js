@@ -13,9 +13,10 @@ export default ShowPost
 
 ShowPost.getInitialProps = async ({
     
-    query: { postid } }) => {
+    query : {postid} , req: { headers: {host} }  
+}) => {
         const post = await axios.get(
-            `${process.env.ROOT}/api/posts/${postid}`)
+            `http://${host}/api/posts/${postid}`)
 
         return { post: post.data.data } 
     }
