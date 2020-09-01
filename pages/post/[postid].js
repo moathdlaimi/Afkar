@@ -12,9 +12,10 @@ const ShowPost = ({ post }) => {
 export default ShowPost
 
 ShowPost.getInitialProps = async ({
+    
     query: { postid } }) => {
         const post = await axios.get(
-            `http://localhost:3000/api/posts/${postid}`)
+            `${process.env.ROOT}/api/posts/${postid}`)
 
         return { post: post.data.data } 
     }
